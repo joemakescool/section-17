@@ -1,7 +1,7 @@
 <template>
-    <div>
-        <button class="btn btn-primary" @click="increment">Increment</button>
-        <button class="btn btn-primary" @click="decrement">Decrement</button>
+    <div class="btn-group">
+        <button class="btn btn-primary" @click="increment">Increment +</button>
+        <button class="btn btn-info" @click="decrement">Decrement -</button>
     </div>
 </template>
 
@@ -9,10 +9,11 @@
     export default {
         methods: {
             increment() {
-                this.$emit('updated', 1);
+                // this.$emit('updated', 1);
+                this.$store.state.counter++;
             },
             decrement() {
-                this.$emit('updated', -1);
+                this.$store.state.counter--;
             }
         }
     }

@@ -4,6 +4,12 @@
 
 <script>
     export default {
-        props: ['counter']
+        // props: ['counterFromParent']
+        data: () => ({}),
+        computed: {
+            counter() {
+                return this.$store.getters.doubleCounter;
+            }
+        }
     }
 </script>
